@@ -1,2 +1,3 @@
 Flask
 langchain_google_genai
+flask-cors
