@@ -1,10 +1,11 @@
+import os
 from flask import Flask, request, jsonify
 from langchain_google_genai import GoogleGenerativeAI
 
 app = Flask(__name__)
 
-# Set your Google API key
-api_key = "YOUR_GOOGLE_API_KEY"
+# Set your Google API key from environment variable
+api_key = os.getenv('GOOGLE_API_KEY')
 
 # Initialize the LLM with LangChain and Google Generative AI
 llm = GoogleGenerativeAI(model="models/text-bison-001", google_api_key=api_key, temperature=0.35)
