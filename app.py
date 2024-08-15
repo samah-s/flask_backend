@@ -22,8 +22,8 @@ def extract_recipe():
     instructions_prompt = f"I want to extract the list of instructions or simple steps for making the recipe in order. Give me just the list from the following HTML content:\n\n{html_content}"
 
     # Fetch ingredients and instructions using the LLM
-    ingredients = llm(ingredients_prompt).text.strip()
-    instructions = llm(instructions_prompt).text.strip()
+    ingredients = llm(ingredients_prompt).strip()
+    instructions = llm(instructions_prompt).strip()
 
     return jsonify({
         'ingredients': ingredients,
